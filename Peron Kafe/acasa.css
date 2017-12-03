@@ -1,21 +1,5 @@
-body{
-	margin: 0;
+body {
+    margin: 0;
     background-color: black;
 }
 
-
-canvas{
-    width:350px;
-    height:50px;
-}
-
-#intro{
-    font-family: "Times New Roman", Times, serif;
-    text-align: center;
-    font-size: 56px;
-    color: white;
-    margin-top:5%;
-    transition: opacity 3s;
-    opacity: 0;
-    
-}
