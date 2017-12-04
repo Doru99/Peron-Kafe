@@ -1,63 +1,67 @@
+"use strict"
 var canvas = document.getElementById("canvas");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+var con = document.getElementById("container");
+var width = window.innerWidth;
+var height = window.innerHeight;
+canvas.width = width;
+canvas.height = height;
 var c = canvas.getContext("2d");
 var minWidth = 35 / 100 * canvas.width; // Punct plecare Ox
 var maxWidth = 65 / 100 * canvas.width; // Punct maxim Ox
-var dx = 9; // Viteza Ox
+var dx = (maxWidth - minWidth) / 20; // Viteza Ox
 var minHeight = 20 / 100 * canvas.height; // Punct plecare Oy
 var maxHeight = 30 / 100 * canvas.height; // Punct maxim Oy
-var dy = 1.5 // Viteza Oy
-var x = minWidth;
-var y = minHeight;
-var w = maxWidth;
-var h = maxHeight;
+var dy = (maxHeight - minHeight) / 20; // Viteza Oy
+var x1 = minWidth;
+var y1 = minHeight;
+var x2 = maxWidth;
+var y2 = maxHeight;
 var alpha = 0;
 
-function animate1() {
+function animate1() { // Linie sus
     c.beginPath();
     c.moveTo(minWidth, minHeight);
-    c.lineTo(x, minHeight);
+    c.lineTo(x1, minHeight);
     c.strokeStyle = "#FFFFFF";
     c.stroke();
-    if (x < maxWidth) x += dx;
-    if (x > maxWidth) x == maxWidth;
+    if (x1 < maxWidth) x1 += dx;
+    if (x1 > maxWidth) x1 = maxWidth;
 }
 
-function animate2() {
+function animate2() { // Linie dreapta
     c.beginPath();
     c.moveTo(maxWidth, minHeight);
-    c.lineTo(maxWidth, y);
+    c.lineTo(maxWidth, y1);
     c.strokeStyle = "#FFFFFF";
     c.stroke();
-    if (y < maxHeight) y += dy;
-    if (y > maxHeight) y == maxHeight;
+    if (y1 < maxHeight) y1 += dy;
+    if (y1 > maxHeight) y1 = maxHeight;
 }
 
-function animate3() {
+function animate3() { // Linie jos
     c.beginPath();
     c.moveTo(maxWidth, maxHeight);
-    c.lineTo(w, maxHeight);
+    c.lineTo(x2, maxHeight);
     c.strokeStyle = "#FFFFFF";
     c.stroke();
-    if (w > minWidth) w -= dx;
-    if (w < minWidth) w == minWidth;
+    if (x2 > minWidth) x2 -= dx;
+    if (x2 < minWidth) x2 = minWidth;
 }
 
-function animate4() {
+function animate4() { // Linie stanga
     c.beginPath();
     c.moveTo(minWidth, maxHeight);
-    c.lineTo(minWidth, h);
+    c.lineTo(minWidth, y2);
     c.strokeStyle = "#FFFFFF";
     c.stroke();
-    if (h > minHeight) h -= dy;
-    if (h < minHeight) h == minHeight;
+    if (y2 > minHeight) y2 -= dy;
+    if (y2 < minHeight) y2 = minHeight;
 }
 
-function animate5() {
-    c.font = "70px Comic Sans MS";
-    c.fillStyle = "rgba(255, 255, 255, " + alpha + ")"
-    c.fillText("Peron Kafe", canvas.width * 40 / 100, canvas.height * 28 / 100);
+function animate5() { // Titlu
+    c.font = "5vw Comic Sans Ms";
+    c.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
+    c.fillText("Peron Kafe", canvas.width * 37.5 / 100, canvas.height * 29 / 100);
     if (alpha < 1) alpha += 0.0005;
 }
 
@@ -70,5 +74,10 @@ function animate() {
     animate5();
 }
 
+function resize() {
+    canvas.height = 0;
+    con.height = height;
+}
+
 animate();
-// Animatie titlu
+setTimeout(resize, 2000);

@@ -1,5 +1,20 @@
 body {
     margin: 0;
-    background-color: black;
+    background-image: url(imagini/acasabg.jpg);
+    background-size: cover;
+    overflow: hidden;
 }
 
+canvas {
+    background-color: rgba(0, 0, 0, 0.95);
+    margin: 0;
+    position: relative;
+    transition: height 4s;
+}
+
+#container {
+    width: 100%;
+    margin: 0;    
+    background-color: black;
+    transition: height 4s;
+}
