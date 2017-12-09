@@ -1,5 +1,5 @@
 "use strict"
-var canvas = document.getElementById("canvas");
+var canvas = document.getElementById("canvas"); 
 var width = window.innerWidth;
 var height = window.innerHeight;
 canvas.width = width;
@@ -16,6 +16,7 @@ var y1 = minHeight;
 var x2 = maxWidth;
 var y2 = maxHeight;
 var alpha = 0;
+var i;
 
 function animate1() { // Linie sus
     c.beginPath();
@@ -58,7 +59,7 @@ function animate4() { // Linie stanga
 }
 
 function animate5() { // Titlu
-    c.font = "5vw Comic Sans Ms";
+    c.font = "5vw Kylets";
     c.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
     c.fillText("Peron Kafe", canvas.width * 37.5 / 100, canvas.height * 29 / 100);
     if (alpha < 1) alpha += 0.0005;
@@ -75,9 +76,7 @@ function animate() {
 
 function resize() {
     canvas.height = 0;
-    document.getElementById("container").style.height = height;
 }
 
-
 animate();
-setTimeout(resize, 2000);
+setTimeout(resize, 2000); 
