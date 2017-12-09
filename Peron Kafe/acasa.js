@@ -1,6 +1,5 @@
 "use strict"
 var canvas = document.getElementById("canvas");
-var con = document.getElementById("container");
 var width = window.innerWidth;
 var height = window.innerHeight;
 canvas.width = width;
@@ -76,8 +75,9 @@ function animate() {
 
 function resize() {
     canvas.height = 0;
-    con.height = height;
+    document.getElementById("container").style.height = height;
 }
+
 
 animate();
 setTimeout(resize, 2000);
