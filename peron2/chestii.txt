@@ -1,0 +1,163 @@
+ CSS
+
+#container {
+    height: 100%;
+    width: 100%;
+    margin: 0;    
+    position: relative;
+    transition: height 4s;
+}
+
+#slide {
+    height: 45%;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+#slide:first-child{
+    margin-top: 2.5%;
+   // background-color: rgba(254, 222, 22, 0.3);
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2.5%;
+}
+
+#slide:nth-child(2){
+    background-color: rgba(17, 94, 173, 0.45);
+}
+
+iframe {
+    height: 60%;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+    position: relative;
+    border: none;
+    transform-origin: top left;
+}
+
+
+
+HTML
+
+
+ 
+    <div id="container">
+        <div id="slide"><iframe src="https://wego.here.com/directions/mix//PERON-KAFE,-Alexandru-Ioan-Cuza,Nr.4B,-Craiova,-Romania:e-eyJuYW1lIjoiUEVST04gS0FGRSIsImFkZHJlc3MiOiJBbGV4YW5kcnUgSW9hbiBDdXphLE5yLjRCLCBDcmFpb3ZhIiwibGF0aXR1ZGUiOjQ0LjMxNzk4LCJsb25naXR1ZGUiOjIzLjc5ODc5LCJwcm92aWRlck5hbWUiOiJmYWNlYm9vayIsInByb3ZpZGVySWQiOjE0NDI5MTEwNTkxMzk2Njh9?map=44.31798,23.79879,15,normal&fb_locale=ro_RO" allow="geolocation"></iframe>
+        <h1>Peron Kafe va invita la <br>cea mai aromata cafea din Craiova</h1></div>
+        
+    </div>
+
+
+
+
+
+
+CANVAS  HTML:
+
+canvas {
+    background-color: rgba(0, 0, 0, 0.80);
+    margin: 0;
+    position: relative;
+    transition: height 4s;
+    border-spacing: 10%;
+    border-radius: 50%;
+   
+    
+}
+
+ CANVAS JS:
+
+/*"use strict"
+var canvas = document.getElementById("canvas"); 
+var width = window.innerWidth;
+var height = window.innerHeight;
+canvas.width = width;
+canvas.height = height;
+var c = canvas.getContext("2d");
+var minWidth = 35 / 100 * canvas.width; // Punct plecare Ox
+var maxWidth = 60 / 100 * canvas.width; // Punct maxim Ox
+var dx = (maxWidth - minWidth) / 20; // Viteza Ox
+var minHeight = 20 / 100 * canvas.height; // Punct plecare Oy
+var maxHeight = 30 / 100 * canvas.height; // Punct maxim Oy
+var dy = (maxHeight - minHeight) / 20; // Viteza Oy
+var x1 = minWidth;
+var y1 = minHeight;
+var x2 = maxWidth;
+var y2 = maxHeight;
+var alpha = 0;
+var i;
+
+function animate1() { // Linie sus
+    c.beginPath();
+    c.moveTo(minWidth, minHeight);
+    c.lineTo(x1, minHeight);
+    c.strokeStyle = "#FFFFFF";
+    c.stroke();
+    if (x1 < maxWidth) x1 += dx;
+    if (x1 > maxWidth) x1 = maxWidth;
+}
+
+function animate2() { // Linie dreapta
+    c.beginPath();
+    c.moveTo(maxWidth, minHeight);
+    c.lineTo(maxWidth, y1);
+    c.strokeStyle = "#FFFFFF";
+    c.stroke();
+    if (y1 < maxHeight) y1 += dy;
+    if (y1 > maxHeight) y1 = maxHeight;
+}
+
+function animate3() { // Linie jos
+    c.beginPath();
+    c.moveTo(maxWidth, maxHeight);
+    c.lineTo(x2, maxHeight);
+    c.strokeStyle = "#FFFFFF";
+    c.stroke();
+    if (x2 > minWidth) x2 -= dx;
+    if (x2 < minWidth) x2 = minWidth;
+}
+
+function animate4() { // Linie stanga
+    c.beginPath();
+    c.moveTo(minWidth, maxHeight);
+    c.lineTo(minWidth, y2);
+    c.strokeStyle = "#FFFFFF";
+    c.stroke();
+    if (y2 > minHeight) y2 -= dy;
+    if (y2 < minHeight) y2 = minHeight;
+}
+
+function animate5() { // Titlu
+    c.font = "5vw Kylets";
+    c.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
+    c.fillText("Peron Kafe", canvas.width * 37.5 / 100, canvas.height * 29 / 100);
+    if (alpha < 1) alpha += 0.0005;
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    animate1();
+    animate2();
+    animate3();
+    animate4();
+    animate5();
+}
+
+function resize() {
+    canvas.height = 0;
+}
+
+animate();
+resize();*/
+//setTimeout(resize, 2000);
+function reveal(){
+    document.getElementById("c1").style.opacity=1;
+    
+    
+}
+setTimeout(reveal,2000);
+
+
+
+
