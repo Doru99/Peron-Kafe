@@ -16,11 +16,12 @@ html {
 
 body {
     margin: 0;
-    background-color:black;
+    background-image:url(imagini/fundal.jpg);
+    background-attachment: fixed;
     background-size: cover;
-    overflow: hidden;
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 canvas {
@@ -32,35 +33,42 @@ canvas {
 
 #container {
     height: 100%;
-    width: 100%;
-    margin: 0;    
+    width: 100%;    
     position: relative;
     transition: height 4s;
 }
+#bottom,
+#top {
+    position: relative;
+    height: 30px;
+    width: 60px;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 1);
+}
 
+#top {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    margin-top: 5%;
+}
+
+#bottom {
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    margin-bottom: 5%;
+}
 #slide {
-    height: 45%;
+    height: 75%;
     width: 100%;
     margin: 0;
     position: relative;
+    background-color: rgba(255, 255, 255, 1);
 }
 
-#slide:first-child{
-    margin-top: 2.5%;
-   // background-color: rgba(254, 222, 22, 0.3);
-    background-color: rgba(255, 255, 255, 0.75);
-    margin-bottom: 2.5%;
-}
-
-#slide:nth-child(2){
-    background-color: rgba(17, 94, 173, 0.45);
-}
 
 iframe {
-    height: 60%;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 1%;
+    height: 70%;
+    width: 100%;
     position: relative;
     border: none;
     transform-origin: top left;
@@ -73,5 +81,39 @@ h1 {
     font-weight: normal;
     font-style: italic;
     font-family: Sing;
-    
+}
+
+p {
+    position: relative;
+    margin: 0;
+    top: 5%;
+    font-family: Kylets;
+    font-size: 3.5vw;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+p::before,
+p::after {
+    content: " ";
+    border-radius: 50%;
+    position: relative;
+    width: 30%;
+    height: 5px;
+    display: inline-block;
+    background-color: #F5DD25;
+}
+
+P::before {
+    margin-right: 5%;
+}
+
+p::after {
+    margin-left: 5%;
+}
+
+img {
+    position: relative;
+    width: 100%;
+    height: 50%
 }

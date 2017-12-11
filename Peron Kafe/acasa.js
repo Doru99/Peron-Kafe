@@ -5,8 +5,8 @@ var height = window.innerHeight;
 canvas.width = width;
 canvas.height = height;
 var c = canvas.getContext("2d");
-var minWidth = 35 / 100 * canvas.width; // Punct plecare Ox
-var maxWidth = 65 / 100 * canvas.width; // Punct maxim Ox
+var minWidth = 40 / 100 * canvas.width; // Punct plecare Ox
+var maxWidth = 60 / 100 * canvas.width; // Punct maxim Ox
 var dx = (maxWidth - minWidth) / 20; // Viteza Ox
 var minHeight = 20 / 100 * canvas.height; // Punct plecare Oy
 var maxHeight = 30 / 100 * canvas.height; // Punct maxim Oy
@@ -61,7 +61,7 @@ function animate4() { // Linie stanga
 function animate5() { // Titlu
     c.font = "5vw Kylets";
     c.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
-    c.fillText("Peron Kafe", canvas.width * 37.5 / 100, canvas.height * 29 / 100);
+    c.fillText("Peron Kafe", canvas.width * 41 / 100, canvas.height * 29 / 100);
     if (alpha < 1) alpha += 0.0005;
 }
 
@@ -76,6 +76,7 @@ function animate() {
 
 function resize() {
     canvas.height = 0;
+    document.getElementsByTagName("BODY")[0].style.overflow = "visible";
 }
 
 animate();
